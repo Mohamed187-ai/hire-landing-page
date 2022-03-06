@@ -7,7 +7,7 @@ import { GoThreeBars } from 'react-icons/go'
 const Navbar = ({ setDarkTheme, darkTheme }) => {
   return (
     <>
-      <header className='sticky inset-x-0 top-0 z-20 flex items-center justify-between bg-white py-2 px-2 shadow-lg dark:bg-slate-900 sm:py-3 sm:px-8'>
+      <header className='sticky inset-x-0 top-0 z-20 flex items-center justify-between bg-white py-2 px-2 shadow-lg dark:bg-slate-900 sm:py-3 sm:px-4'>
         <div className='flex grow-0 basis-1/3 md:hidden'><MenuPopover /></div>
         <div className='flex grow-0 basis-1/3 justify-center md:justify-start'>
           <a href="#" className='my-auto flex w-[140px] md:ml-0'>

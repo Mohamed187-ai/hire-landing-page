@@ -2,3 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark .swiper-button-next, .dark .swiper-button-prev {
+    background-color: theme('colors.gray.500') !important;
+}
+.dark .swiper-button-next:after, .dark .swiper-button-prev:after {
+    color: theme('colors.white') !important;
+}
+.swiper-button-next, .swiper-button-prev {
+    background-color: theme('colors.white');
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 50%;
+    box-shadow: theme('boxShadow.lg');
+    transition: all;
+    transition-duration: 150ms;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+    color: black;
+    font-size: 1rem !important;
+    font-weight: bold;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: theme('colors.slate.200');
+}

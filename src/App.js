@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar  from './components/Navbar.jsx';
 import Banner  from './components/Banner.jsx';
-import Carousel  from './components/Carousel.jsx';
+import Featuredjobs  from './components/Featuredjobs.jsx';
 import Company   from './components/Company.jsx';
 import Footer    from './components/Footer.jsx';
 
@@ -14,11 +14,13 @@ function App() {
       <div className="bg-neutral-100 dark:bg-gray-800 text-gray-800 dark:text-white">
         <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>
         <Banner />
-        <div>
-          <Carousel />
+        <main className='mx-auto mt-16 max-w-screen-lg space-y-20 sm:px-8'>
+          <Featuredjobs />
           <Company />
-        </div>
-        <Footer />
+        </main>
+        <footer className='mt-20'>
+          <Footer />
+        </footer>
       </div>
     </div>
   );

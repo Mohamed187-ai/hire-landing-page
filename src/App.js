@@ -18,9 +18,7 @@ function App() {
           <Featuredjobs />
           <Company />
         </main>
-        <footer className='mt-20'>
-          <Footer />
-        </footer>
+        <Footer />
       </div>
     </div>
   );

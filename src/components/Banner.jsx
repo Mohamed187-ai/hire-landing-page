@@ -49,6 +49,7 @@ const SearchFrom = () => {
       }
       i++;
     }, 3000);
+    return () => clearInterval(interval);
   }, [isDirty]);
   return(
     <form className='flex flex-col items-center'>

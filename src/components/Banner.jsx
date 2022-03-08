@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { GrFormClose } from 'react-icons/gr'
 
 const Banner = () => {
@@ -36,12 +36,32 @@ const HeroInnerBanner = () => {
   )
 }
 
+const items = ["graphic designer", "software developer", "architecture"];
 const SearchFrom = () => {
+  const [query, setQuery] = useState("");
+  const [isDirty, setIsDirty] = useState(false);
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      if(!isDirty) {
+        let value = items[i >= items.length ? (i = 0) : i];
+        setQuery(value);
+      }
+      i++;
+    }, 3000);
+  }, [isDirty]);
   return(
     <form className='flex flex-col items-center'>
       <div className='flex flex-col items-center'>
-        <input type='text' placeholder='Search for a job' className='md:w-96 sm:w-full py-1 px-2 bg-neutral-300 rounded-full text-sm focus:outline-none focus:shadow-outline'/>
-        <button type='submit' className='bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 mt-4 rounded-full duration-500 ease-in-out'>Search</button>
+        <input 
+          type='text' 
+          placeholder='Search for a job '
+          className='md:w-96 sm:w-full py-2 px-4 font-bold bg-neutral-300 rounded-full text-sm focus:outline-none focus:shadow-outline'
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onClick={() => {if(!isDirty) {setIsDirty(true); setQuery("")}}}
+        />
+        <button type='submit' className='bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 mt-4 rounded-full duration-500 ease-in-out'>🔎 Search</button>
       </div>
       <div className='relative flex flex-col items-center mt-4'>
         <span className='text-sm text-white before:absolute before:h-0.5 before:w-14 before:bg-gray-200 before:-left-4 before:top-[10px] after:absolute after:h-0.5 after:w-14 after:bg-gray-200 after:-right-4 after:top-[10px] '>or</span>
